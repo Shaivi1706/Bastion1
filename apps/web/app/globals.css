@@ -1,26 +1,135 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+  :root {
+    /* Deep Control Dark Theme (Default) */
+    --background: #0B1020;
+    --foreground: #F9FAFB;
+
+    --card: #111827;
+    --card-foreground: #F9FAFB;
+
+    --popover: #111827;
+    --popover-foreground: #F9FAFB;
+
+    --primary: #6366F1;
+    --primary-foreground: #FFFFFF;
+
+    --secondary: #1F2937;
+    --secondary-foreground: #F9FAFB;
+
+    --muted: #1F2937;
+    --muted-foreground: #9CA3AF;
+
+    --accent: #6366F1;
+    --accent-foreground: #FFFFFF;
+
+    --destructive: #EF4444;
+    --destructive-foreground: #FFFFFF;
+
+    --border: #1F2937;
+    --input: #1F2937;
+    --ring: #6366F1;
+
+    --radius: 0.5rem;
+
+    /* Chart Colors */
+    --chart-1: #6366F1;
+    /* Primary/Schema Health */
+    --chart-2: #22C55E;
+    /* Success/Freshness */
+    --chart-3: #F59E0B;
+    /* Warning/Drift Non-breaking */
+    --chart-4: #EF4444;
+    /* Critical/Breaking */
+    --chart-5: #8B5CF6;
+    /* Extra generic */
+
+    /* Sidebar specific */
+    --sidebar-background: #0F172A;
+    --sidebar-foreground: #F9FAFB;
+    --sidebar-primary: #6366F1;
+    --sidebar-primary-foreground: #FFFFFF;
+    --sidebar-accent: #1E293B;
+    --sidebar-accent-foreground: #F9FAFB;
+    --sidebar-border: #1E293B;
+    --sidebar-ring: #6366F1;
+  }
+
+  /* Keep a light mode backup just in case, but default is dark */
+  .light {
+    --background: #ffffff;
+    --foreground: #0B1020;
+    --card: #ffffff;
+    --card-foreground: #0B1020;
+    --popover: #ffffff;
+    --popover-foreground: #0B1020;
+    --primary: #6366F1;
+    --primary-foreground: #ffffff;
+    --secondary: #f1f5f9;
+    --secondary-foreground: #0f172a;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --accent: #f1f5f9;
+    --accent-foreground: #0f172a;
+    --destructive: #ef4444;
+    --destructive-foreground: #f8fafc;
+    --border: #e2e8f0;
+    --input: #e2e8f0;
+    --ring: #6366F1;
+    --chart-1: #6366F1;
+    --chart-2: #22c55e;
+    --chart-3: #f59e0b;
+    --chart-4: #ef4444;
+    --chart-5: #8b5cf6;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar: var(--sidebar-background);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
 }
