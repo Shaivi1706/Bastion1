@@ -43,6 +43,13 @@ Response: SSE stream of JSON events:
 
 Stages: `cloning` → `parsing` → `agent_running` → `completed`.
 
+## Deployment
+
+- **Backend (Render):** https://bastion1.onrender.com  
+- **Frontend (Vercel):** https://bastion1-web.vercel.app  
+
+CORS allows the Vercel frontend origin. To override, set `FRONTEND_ORIGIN` on Render (e.g. `https://bastion1-web.vercel.app`). Local dev uses `http://localhost:3000` as well.
+
 ## Layout
 
 - `routers/` – HTTP endpoints  

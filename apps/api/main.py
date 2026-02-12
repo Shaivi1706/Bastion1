@@ -2,6 +2,7 @@
 FastAPI application entry point.
 Production-ready API with SSE support for analysis workflows.
 """
+import os
 from contextlib import asynccontextmanager
 from typing import AsyncGenerator
 
@@ -9,6 +10,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.routers import analysis
+
+# Frontend origin for CORS (Vercel)
+FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "https://bastion1-web.vercel.app")
+CORS_ORIGINS = [FRONTEND_ORIGIN, "http://localhost:3000"]
 
 
 @asynccontextmanager
@@ -29,7 +34,7 @@ def create_application() -> FastAPI:
     )
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["*"],
+        allow_origins=CORS_ORIGINS,
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
