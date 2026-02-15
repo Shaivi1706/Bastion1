@@ -47,14 +47,14 @@ export default function QualityPage() {
                             <ResponsiveContainer width="100%" height="100%">
                                 <LineChart data={freshnessData}>
                                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--border))" />
-                                    <XAxis dataKey="time" stroke="#E5E7EB" fontSize={12} tickLine={false} axisLine={false} />
-                                    <YAxis stroke="#E5E7EB" fontSize={12} tickLine={false} axisLine={false} />
+                                    <XAxis dataKey="time" stroke="#ffffff" tick={{ fill: "#ffffff" }} fontSize={12} tickLine={false} axisLine={false} />
+                                    <YAxis stroke="#ffffff" tick={{ fill: "#ffffff" }} fontSize={12} tickLine={false} axisLine={false} />
                                     <Tooltip
-                                        contentStyle={{ backgroundColor: '#1F2937', borderColor: '#374151', borderRadius: '8px' }}
-                                        itemStyle={{ color: '#F9FAFB' }}
-                                        labelStyle={{ color: '#F9FAFB' }}
+                                        contentStyle={{ backgroundColor: "#1F2937", borderColor: "#374151", borderRadius: "8px" }}
+                                        itemStyle={{ color: "#F9FAFB" }}
+                                        labelStyle={{ color: "#F9FAFB" }}
                                     />
-                                    <Line type="step" dataKey="latency" stroke="hsl(var(--primary))" strokeWidth={2} dot={false} />
+                                    <Line type="step" dataKey="latency" stroke="hsl(var(--primary))" strokeWidth={2} dot={{ r: 4, fill: "#ffffff" }} activeDot={{ r: 6, fill: "#ffffff" }} />
                                 </LineChart>
                             </ResponsiveContainer>
                         </div>
@@ -67,8 +67,7 @@ export default function QualityPage() {
                         <CardDescription>Distribution of null values across key tables.</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <div className="h-[250px] w-full flex items-center justify-center text-muted-foreground">
-                            {/* Placeholder for a Bar Chart or similar */}
+                        <div className="h-[250px] w-full">
                             <ResponsiveContainer width="100%" height="100%">
                                 <BarChart data={[
                                     { name: 'Users', val: 95 },
@@ -77,14 +76,14 @@ export default function QualityPage() {
                                     { name: 'Logs', val: 100 },
                                 ]}>
                                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--border))" />
-                                    <XAxis dataKey="name" stroke="#E5E7EB" fontSize={12} tickLine={false} axisLine={false} />
+                                    <XAxis dataKey="name" stroke="#ffffff" tick={{ fill: "#ffffff" }} fontSize={12} tickLine={false} axisLine={false} />
                                     <Tooltip
-                                        cursor={{ fill: 'hsl(var(--muted)/0.2)' }}
-                                        contentStyle={{ backgroundColor: '#1F2937', borderColor: '#374151', borderRadius: '8px' }}
-                                        itemStyle={{ color: '#F9FAFB' }}
-                                        labelStyle={{ color: '#F9FAFB' }}
+                                        cursor={{ fill: "hsl(var(--muted)/0.2)" }}
+                                        contentStyle={{ backgroundColor: "#1F2937", borderColor: "#374151", borderRadius: "8px" }}
+                                        itemStyle={{ color: "#F9FAFB" }}
+                                        labelStyle={{ color: "#F9FAFB" }}
                                     />
-                                    <Bar dataKey="val" fill="hsl(var(--chart-2))" radius={[4, 4, 0, 0]} />
+                                    <Bar dataKey="val" fill="#ffffff" radius={[4, 4, 0, 0]} />
                                 </BarChart>
                             </ResponsiveContainer>
                         </div>

@@ -137,17 +137,17 @@ export default function LandingPage() {
                   <AreaChart data={driftData}>
                     <defs>
                       <linearGradient id="colorDrift" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.3} />
-                        <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0} />
+                        <stop offset="5%" stopColor="#ffffff" stopOpacity={0.4} />
+                        <stop offset="95%" stopColor="#ffffff" stopOpacity={0} />
                       </linearGradient>
                     </defs>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--border))" />
-                    <XAxis dataKey="name" stroke="#E5E7EB" fontSize={12} tickLine={false} axisLine={false} />
-                    <YAxis stroke="#E5E7EB" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `${value}`} />
+                    <XAxis dataKey="name" stroke="#ffffff" tick={{ fill: "#ffffff" }} fontSize={12} tickLine={false} axisLine={false} />
+                    <YAxis stroke="#ffffff" tick={{ fill: "#ffffff" }} fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `${value}`} />
                     <Tooltip
-                      contentStyle={{ backgroundColor: '#1F2937', borderColor: '#374151', borderRadius: '8px' }}
-                      itemStyle={{ color: '#F9FAFB' }}
-                      labelStyle={{ color: '#F9FAFB' }}
+                      contentStyle={{ backgroundColor: "#1F2937", borderColor: "#374151", borderRadius: "8px" }}
+                      itemStyle={{ color: "#F9FAFB" }}
+                      labelStyle={{ color: "#F9FAFB" }}
                     />
                     <Area type="monotone" dataKey="drift" stroke="hsl(var(--primary))" strokeWidth={2} fillOpacity={1} fill="url(#colorDrift)" />
                   </AreaChart>
@@ -167,14 +167,14 @@ export default function LandingPage() {
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={healthData}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--border))" />
-                    <XAxis dataKey="name" stroke="#E5E7EB" fontSize={12} tickLine={false} axisLine={false} />
-                    <YAxis stroke="#E5E7EB" fontSize={12} tickLine={false} axisLine={false} domain={[80, 100]} />
+                    <XAxis dataKey="name" stroke="#ffffff" tick={{ fill: "#ffffff" }} fontSize={12} tickLine={false} axisLine={false} />
+                    <YAxis stroke="#ffffff" tick={{ fill: "#ffffff" }} fontSize={12} tickLine={false} axisLine={false} domain={[80, 100]} />
                     <Tooltip
-                      contentStyle={{ backgroundColor: '#1F2937', borderColor: '#374151', borderRadius: '8px' }}
-                      itemStyle={{ color: '#F9FAFB' }}
-                      labelStyle={{ color: '#F9FAFB' }}
+                      contentStyle={{ backgroundColor: "#1F2937", borderColor: "#374151", borderRadius: "8px" }}
+                      itemStyle={{ color: "#F9FAFB" }}
+                      labelStyle={{ color: "#F9FAFB" }}
                     />
-                    <Line type="monotone" dataKey="score" stroke="hsl(var(--destructive))" strokeWidth={2} dot={{ r: 4, fill: "hsl(var(--destructive))" }} activeDot={{ r: 6 }} />
+                    <Line type="monotone" dataKey="score" stroke="hsl(var(--destructive))" strokeWidth={2} dot={{ r: 4, fill: "#ffffff" }} activeDot={{ r: 6, fill: "#ffffff" }} />
                   </LineChart>
                 </ResponsiveContainer>
               </CardContent>

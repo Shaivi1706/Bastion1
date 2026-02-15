@@ -92,14 +92,14 @@ export default function DashboardOverview() {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={healthData}>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--border))" />
-                  <XAxis dataKey="name" stroke="#E5E7EB" fontSize={12} tickLine={false} axisLine={false} />
-                  <YAxis stroke="#E5E7EB" fontSize={12} tickLine={false} axisLine={false} domain={[50, 100]} />
+                  <XAxis dataKey="name" stroke="#ffffff" tick={{ fill: "#ffffff" }} fontSize={12} tickLine={false} axisLine={false} />
+                  <YAxis stroke="#ffffff" tick={{ fill: "#ffffff" }} fontSize={12} tickLine={false} axisLine={false} domain={[50, 100]} />
                   <Tooltip
-                    contentStyle={{ backgroundColor: '#1F2937', borderColor: '#374151', borderRadius: '8px' }}
-                    itemStyle={{ color: '#F9FAFB' }}
-                    labelStyle={{ color: '#F9FAFB' }}
+                    contentStyle={{ backgroundColor: "#1F2937", borderColor: "#374151", borderRadius: "8px" }}
+                    itemStyle={{ color: "#F9FAFB" }}
+                    labelStyle={{ color: "#F9FAFB" }}
                   />
-                  <Line type="monotone" dataKey="score" stroke="hsl(var(--primary))" strokeWidth={2} dot={{ r: 4, fill: "hsl(var(--primary))" }} activeDot={{ r: 6 }} />
+                  <Line type="monotone" dataKey="score" stroke="hsl(var(--primary))" strokeWidth={2} dot={{ r: 4, fill: "#ffffff" }} activeDot={{ r: 6, fill: "#ffffff" }} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
@@ -115,15 +115,15 @@ export default function DashboardOverview() {
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={nullData} layout="vertical">
                   <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="hsl(var(--border))" />
-                  <XAxis type="number" stroke="#E5E7EB" fontSize={12} tickLine={false} axisLine={false} />
-                  <YAxis dataKey="name" type="category" stroke="#E5E7EB" fontSize={12} tickLine={false} axisLine={false} width={80} />
+                  <XAxis type="number" stroke="#ffffff" tick={{ fill: "#ffffff" }} fontSize={12} tickLine={false} axisLine={false} />
+                  <YAxis dataKey="name" type="category" stroke="#ffffff" tick={{ fill: "#ffffff" }} fontSize={12} tickLine={false} axisLine={false} width={80} />
                   <Tooltip
-                    cursor={{ fill: 'hsl(var(--muted)/0.2)' }}
-                    contentStyle={{ backgroundColor: '#1F2937', borderColor: '#374151', borderRadius: '8px' }}
-                    itemStyle={{ color: '#F9FAFB' }}
-                    labelStyle={{ color: '#F9FAFB' }}
+                    cursor={{ fill: "hsl(var(--muted)/0.2)" }}
+                    contentStyle={{ backgroundColor: "#1F2937", borderColor: "#374151", borderRadius: "8px" }}
+                    itemStyle={{ color: "#F9FAFB" }}
+                    labelStyle={{ color: "#F9FAFB" }}
                   />
-                  <Bar dataKey="nulls" fill="hsl(var(--chart-4))" radius={[0, 4, 4, 0]} barSize={20} />
+                  <Bar dataKey="nulls" fill="#ffffff" radius={[0, 4, 4, 0]} barSize={20} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
